@@ -1,13 +1,16 @@
 import React from 'react';
 import {TrackerProvider} from './context/GlobalState';
 import './App.css';
+import Head from './components/Head';
+import Balance from './components/Balance';
 
 function App() {
   return (
 
   <TrackerProvider>  
-    <div>
-      <h1>Hello World...</h1>
+    <div className="Container">
+      <Head/>
+      <Balance/>
     </div>
   </TrackerProvider>  
   );
