@@ -5,9 +5,9 @@ import {IAction, IState, ITrans} from '../types/Interface';
 const initialState: IState = {
     transactions: [
     ]
-};
+}; 
 
-export const Tracker = createContext<IState | any>(initialState);
+export const GlobalContext = createContext<IState | any>(initialState);
 
 function reducer(state: IState, action: IAction): IState {
     switch (action.type) {
@@ -23,8 +23,8 @@ function reducer(state: IState, action: IAction): IState {
 
 }
 
-export function TrackerProvider(props: any): JSX.Element {
+export function GlobalProvider(props: any): JSX.Element {
     const [state, dispatch] = useReducer(reducer, initialState);
-    return <Tracker.Provider value={{ state, dispatch }}>{props.children}</Tracker.Provider>
+    return <GlobalContext.Provider value={{ state, dispatch }}>{props.children}</GlobalContext.Provider>
 }
 

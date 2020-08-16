@@ -2,13 +2,9 @@ import React from 'react';
 
 const Head = () => {
     return (
-        <>
-
-            <div className="header">
-                Expense Trackers
-            </div>
-
-        </>
+     <h2>
+      Expense tracker
+     </h2>
     )
 }
 

@@ -1,18 +1,24 @@
 import React from 'react';
-import {TrackerProvider} from './context/GlobalState';
+import {GlobalProvider} from './context/GlobalState';
 import './App.css';
 import Head from './components/Head';
 import Balance from './components/Balance';
+import IncomeExp from './components/IncomeExp';
+import { TransactionList } from './components/TransactionList';
+import AddTransaction from './components/AddTransaction';
 
 function App() {
   return (
 
-  <TrackerProvider>  
-    <div className="Container">
+  <GlobalProvider>      
       <Head/>
+    <div className="container">  
       <Balance/>
+      <IncomeExp/>
+      <TransactionList/>
+      <AddTransaction/>
     </div>
-  </TrackerProvider>  
+  </GlobalProvider>  
   );
 }
 
