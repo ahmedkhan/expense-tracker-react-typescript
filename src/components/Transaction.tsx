@@ -8,14 +8,15 @@ const Transaction: React.FC<ITrans> = (transaction) => {
 
     function delTransaction(transaction:ITrans){
         dispatch({
-            type:'DEL',
+            type:'DELETE',
             payload:transaction
         });
     }
      const sign = transaction.amount < 0 ? '-' : '+';
     return(
         <li className={transaction.amount < 0 ? 'minus' : 'plus'}>
-        {transaction.text} <span>{sign}${Math.abs(transaction.amount)}</span><button onClick={() => delTransaction(transaction)} className="delete-btn">x</button>
+        {transaction.text} <span>{sign}${Math.abs(transaction.amount)}</span>
+        <button onClick={() => delTransaction(transaction)} className="delete-btn">x</button>
       </li>
     )
 }

@@ -6,10 +6,10 @@ import Balance from './components/Balance';
 import IncomeExp from './components/IncomeExp';
 import { TransactionList } from './components/TransactionList';
 import AddTransaction from './components/AddTransaction';
-
+  
 function App() {
   return (
-
+ 
   <GlobalProvider>      
       <Head/>
     <div className="container">  
