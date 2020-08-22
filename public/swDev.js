@@ -1,14 +1,13 @@
 console.log('registered...')
-
+ 
 
 var CACHE_NAME = 'Expense-tracker'
 
-var FilesToCache = [    
+var urlsToCache = [    
     "/static/js/main.chunk.js",
     "/static/js/bundle.js",
     "/static/js/0.chunk.js",
-    "index.html",
-    '/manifest.json',    
+    "index.html",       
     "/"
 
 
@@ -21,7 +20,7 @@ this.addEventListener('install', (event) => {
             .then((cache) => {
                 console.log('Opened Cache')
                 return (
-                    cache.addAll(FilesToCache)
+                    cache.addAll(urlsToCache)
                     
                 )
 
