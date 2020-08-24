@@ -1,17 +1,16 @@
 export default function swDev() {
 
-    if ('serviceWorker' in navigator) {        
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/swDev.js').then((registration) => {
-                console.log('ServiceWorker registration successful with scope', registration);
-
-            }).catch((err) => {
-                console.log('ServiceWorker registration failed: ', err)
-            })
-
-        })
-
+    // Check for browser support of service worker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/swDev.js')
+            .then(function (registration) {
+                // Successful registration
+                console.log('Hooray. Registration successful, scope is:', registration.scope);
+            }).catch(function (err) {
+                // Failed registration, service worker won’t be installed
+                console.log('Whoops. Service worker registration failed, error:', err);
+            });
     }
-} 
+}
 
 
