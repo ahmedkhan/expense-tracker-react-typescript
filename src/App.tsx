@@ -9,7 +9,7 @@ import AddTransaction from './components/AddTransaction';
   
 function App() {
   return (
- 
+  
   <GlobalProvider>      
       <Head/>
     <div className="container">  
