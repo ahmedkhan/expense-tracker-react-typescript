@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import { ITrans } from './../types/Interface';
-
+import {deferredPrompt} from '../sw';
 const AddTransaction = () => {
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
@@ -25,6 +25,22 @@ const AddTransaction = () => {
         };
 
         addTransaction(newTransaction);
+        
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then(function(choiceResult:any){
+             console.log(choiceResult.outcome);
+
+             if (choiceResult.outcome === 'dismissed'){
+                 console.log("user cancel installiation")
+             }else {
+                 console.log("User Added to Home screen")
+             }
+            });                   
+           
+        }  
+         
+    
     }
 
     return (

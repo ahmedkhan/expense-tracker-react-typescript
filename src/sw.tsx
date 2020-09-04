@@ -1,6 +1,5 @@
-
-export default function swDev() {
-
+export let deferredPrompt : null | any ;
+export function sw() {
   // Check for browser support of service worker
   if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js')
@@ -13,3 +12,13 @@ export default function swDev() {
           });
   }
 }
+  
+window.addEventListener('beforeinstallprompt', function(event) {
+    console.log("Before Install Prompt fired");
+    event.preventDefault();
+    deferredPrompt=event;
+    return false;
+});
+ 
+
+

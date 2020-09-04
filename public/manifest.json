@@ -1,6 +1,6 @@
 {
-  "short_name": "Quiz App",
-  "name": "Quiz App PWA", 
+  "short_name": "Expense Tracker",
+  "name": "Expense Tracker PWA", 
   "icons": [
     {
     "src": "/images/icons/exp24X24.png",
